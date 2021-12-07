@@ -1,69 +1,65 @@
-class BooksController < ApplicationController
-  before_action :set_book, only: %i[ show edit update destroy ]
+body {
+  background-color: #fff;
+  color: #333;
+  margin: 33px; }
 
-  # GET /books or /books.json
-  def index
-    @books = Book.all
-  end
+body, p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px; }
 
-  # GET /books/1 or /books/1.json
-  def show
-  end
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px; }
 
-  # GET /books/new
-  def new
-    @book = Book.new
-  end
+a {
+  color: #000; }
 
-  # GET /books/1/edit
-  def edit
-  end
+a:visited {
+  color: #666; }
 
-  # POST /books or /books.json
-  def create
-    @book = Book.new(book_params)
+a:hover {
+  color: #fff;
+  background-color: #000; }
 
-    respond_to do |format|
-      if @book.save
-        format.html { redirect_to @book, notice: "Book was successfully created." }
-        format.json { render :show, status: :created, location: @book }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @book.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+th {
+  padding-bottom: 5px; }
 
-  # PATCH/PUT /books/1 or /books/1.json
-  def update
-    respond_to do |format|
-      if @book.update(book_params)
-        format.html { redirect_to @book, notice: "Book was successfully updated." }
-        format.json { render :show, status: :ok, location: @book }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @book.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+td {
+  padding: 0 5px 7px; }
 
-  # DELETE /books/1 or /books/1.json
-  def destroy
-    @book.destroy
-    respond_to do |format|
-      format.html { redirect_to books_url, notice: "Book was successfully destroyed." }
-      format.json { head :no_content }
-    end
-  end
+div.field,
+div.actions {
+  margin-bottom: 10px; }
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_book
-      @book = Book.find(params[:id])
-    end
+#notice {
+  color: green; }
 
-    # Only allow a list of trusted parameters through.
-    def book_params
-      params.require(:book).permit(:title, :number_of_pages)
-    end
-end
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table; }
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0; }
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px -7px 0;
+  background-color: #c00;
+  color: #fff; }
+
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square; }
+
+label {
+  display: block; }
